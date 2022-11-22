@@ -7,6 +7,7 @@ function UseStateArray(): JSX.Element {
   const removeItem = (id: number) => {
     let newPeople = people.filter((person) => person.id !== id);
     setPeople(newPeople);
+  
   };
   return (
     <>
@@ -15,9 +16,20 @@ function UseStateArray(): JSX.Element {
         return (
           <div key={id} className="item">
             <h4>{name}</h4>
+                        <button
+               className="btn"
+               onClick={() => {
+                 if (people.length > 0) {
+                   removeItem(id);
+                 }
+               }}
+             >
+               Remove Item
+             </button>
           </div>
         );
       })}
+    
       <button
         className="btn"
         onClick={() => {
@@ -34,16 +46,7 @@ function UseStateArray(): JSX.Element {
       >
         Reset Items
       </button>
-      <button
-        className="btn"
-        onClick={() => {
-          if (people.length > 0) {
-            removeItem(people[0].id);
-          }
-        }}
-      >
-        Remove Item
-      </button>
+ 
     </>
   );
 }
