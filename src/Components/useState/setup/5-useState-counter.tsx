@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 function UseStateObject(): JSX.Element {
   const [value, setValue] = useState(0);
   const reset = () => {
@@ -8,7 +7,14 @@ function UseStateObject(): JSX.Element {
   const increase = () => {
     setValue(value + 1);
   };
-
+  const increaseLetter = () => {
+    setTimeout(() => {
+      // setValue(value + 1);
+      setValue((prevState) => {
+        return prevState + 1;
+      });
+    }, 2000);
+  };
   return (
     <>
       <section style={{ margin: "4rem 0" }}>
@@ -24,8 +30,15 @@ function UseStateObject(): JSX.Element {
           Increase
         </button>
       </section>
+      {/* //----------------------------------------------------- */}
+      <section style={{ margin: "4rem 0" }}>
+        <h2>Mor Complex Counter</h2>
+        <h1>{value}</h1>
+        <button className="btn" onClick={increaseLetter}>
+          Increase Later
+        </button>
+      </section>
     </>
   );
 }
-
 export default UseStateObject;
