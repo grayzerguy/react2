@@ -6,7 +6,9 @@ import React from "react";
 // import SetUp from "./Components/2-useEffect/setup/1-useEffect-basics";
 // import SetUp from "./Components/2-useEffect/setup/2-useEffect-cleanup";
 // import SetUp from "./Components/2-useEffect/setup/3-useEffect-fetch-data";
-import SetUp from "./Components/3-conditional-rendering/1-multiple-returns"
+// import SetUp from "./Components/3-conditional-rendering/setup/1-multiple-returns"
+// import SetUp from "./Components/3-conditional-rendering/setup/2-short-circuit"
+import SetUp from "./Components/3-conditional-rendering/setup/3-show-hide";
 function App(): JSX.Element {
   return (
     <div className="container">
